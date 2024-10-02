@@ -1,0 +1,60 @@
+﻿@using WebNB.Models.Entities
+@model List<Gia_DV>
+
+@{
+}
+
+<h2 class="text-center mb-5">Giá dịch vụ</h2>
+
+<div class="row mb-5">
+    <div>
+        <a class="btn btn-primary" asp-controller="Gia_DV" asp-action="Create">Tạo mới</a>
+    </div>
+    <div class="col">
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Mã</th>
+            <th>Tên</th>
+            <th>ĐVT</th>
+            <th>Giá</th>
+            <th>Giá BH</th>
+            <th>Loại VP</th>
+            <th>Nhóm VP</th>
+            <th>Nhóm BH</th>
+            <th>QĐ 36</th>
+            <th>Tên 43</th>
+            <th>Mã giường</th>
+            <th>Ghi chú</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var gia_dv in Model)
+        {
+            <tr>
+                <td>@gia_dv.STT</td>
+                <td>@gia_dv.Ma</td>
+                <td>@gia_dv.Ten</td>
+                <td>@gia_dv.DVT</td>
+                <td>@gia_dv.Gia_TH</td>
+                <td>@gia_dv.Gia_BH</td>
+                <td>@gia_dv.LoaiVP</td>
+                <td>@gia_dv.NhomVP</td>
+                <td>@gia_dv.NhomVP_BHYT</td>
+                <td>@gia_dv.QD366</td>
+                <td>@gia_dv.Ten43</td>
+                <td>@gia_dv.MaGiuong</td>
+                <td>@gia_dv.GhiChuKt</td>
+                <td style="white-space:nowrap">
+                    <a class="btn btn-primary btn-sm" asp-controller="Gia_DV" asp-action="Edit" asp-route-id="@gia_dv.STT">Sửa</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="Gia_DV" asp-action="Delete" asp-route-id="@gia_dv.STT">Xoá</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,60 @@
+﻿@using WebNB.Models.Entities
+@model List<Gia_GIUONG>
+
+@{
+}
+
+<h2 class="text-center mb-5">Giá GIƯỜNG</h2>
+
+<div class="row mb-5">
+    <div>
+        <a class="btn btn-primary" asp-controller="Gia_GIUONG" asp-action="Create">Tạo mới</a>
+    </div>
+    <div class="col">
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Mã</th>
+            <th>Tên</th>
+            <th>ĐVT</th>
+            <th>Giá</th>
+            <th>Giá BH</th>
+            <th>Loại VP</th>
+            <th>Nhóm VP</th>
+            <th>Nhóm BH</th>
+            <th>QĐ 36</th>
+            <th>Tên 43</th>
+            <th>Mã giường</th>
+            <th>Ghi chú</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var gia_giuong in Model)
+        {
+            <tr>
+                <td>@gia_giuong.STT</td>
+                <td>@gia_giuong.Ma</td>
+                <td>@gia_giuong.Ten</td>
+                <td>@gia_giuong.DVT</td>
+                <td>@gia_giuong.Gia_TH</td>
+                <td>@gia_giuong.Gia_BH</td>
+                <td>@gia_giuong.LoaiVP</td>
+                <td>@gia_giuong.NhomVP</td>
+                <td>@gia_giuong.NhomVP_BHYT</td>
+                <td>@gia_giuong.QD366</td>
+                <td>@gia_giuong.Ten43</td>
+                <td>@gia_giuong.MaGiuong</td>
+                <td>@gia_giuong.GhiChuKt</td>
+                <td style="white-space:nowrap">
+                    <a class="btn btn-primary btn-sm" asp-controller="Gia_GIUONG" asp-action="Edit" asp-route-id="@gia_giuong.STT">Sửa</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="Gia_GIUONG" asp-action="Delete" asp-route-id="@gia_giuong.STT">Xoá</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

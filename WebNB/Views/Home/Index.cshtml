@@ -6,3 +6,9 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+@using (Html.BeginForm("ImportExcel", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Upload Excel File</label>
+    <input type="file" name="file" id="file" />
+    <button type="submit">Import</button>
+}

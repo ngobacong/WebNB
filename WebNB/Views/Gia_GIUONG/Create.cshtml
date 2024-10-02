@@ -1,0 +1,125 @@
+﻿@model Gia_GiuongDto
+@{
+}
+
+<div class="row">
+    <div class="col-md-8 mx-auto rounded border p3">
+        <h2 class="text-center mb-5">Tạo mới</h2>
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Mã</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Ma">
+                    <span asp-validation-for="Ma" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Tên</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Ten">
+                    <span asp-validation-for="Ten" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">ĐVT</label>
+                <div class="col-sm-8">
+                    <select class="form-select" asp-for="DVT">
+                    <option value='Ngày'>Ngày</option>
+                    <option value='Giờ'>Giờ</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Giá</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Gia_TH">
+                    <span asp-validation-for="Gia_TH" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Giá BH</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Gia_BH">
+                    <span asp-validation-for="Gia_BH" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Loại VP</label>
+                <div class="col-sm-8">
+                    <select class="form-select" asp-for="LoaiVP">
+                        <option value='Giường Khoa TMH'>Giường Khoa TMH</option>
+                        <option value='Giường Khoa CTCH'>Giường Khoa CTCH</option>
+                        <option value='Giường Khoa Ngoại'>Giường Khoa Ngoại</option>
+                        <option value='Giường Khoa Phụ sản'>Giường Khoa Phụ sản</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Nhóm VP</label>
+                <div class="col-sm-8">
+                    <select class="form-select" asp-for="NhomVP">
+                        <option value='15 Giường'>15 Giường</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Nhóm BH</label>
+                <div class="col-sm-8">
+                    <select class="form-select" asp-for="NhomVP_BHYT">
+                        <option value='Giường'>Giường</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">QĐ36</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="QD366">
+                    <span asp-validation-for="QD366" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Tên 43</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Ten43">
+                    <span asp-validation-for="Ten43" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Mã giường</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="MaGiuong">
+                    <span asp-validation-for="MaGiuong" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Ghi chú</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="GhiChuKt">
+                    <span asp-validation-for="GhiChuKt" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="offset-sm-4 col-sm-4 d-grid">
+                    <button type="submit" class="btn btn-primary">Tạo</button>
+                </div>
+
+                <div class="col-sm-4 d-grid">
+                    <a class="btn btn-outline-primary" asp-controller="Gia_GIUONG" asp-action="Index" role="button">Huỷ</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

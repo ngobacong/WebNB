@@ -1,0 +1,58 @@
+﻿@using WebNB.Models.Entities
+@model List<Gia_PTTT>
+
+@{
+}
+
+<h2 class="text-center mb-5">Giá PTTT</h2>
+
+<div class="row mb-5">
+    <div>
+        <a class="btn btn-primary" asp-controller="Gia_PTTT" asp-action="Create">Tạo mới</a>
+    </div>
+    <div class="col">
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Mã</th>
+            <th>Tên</th>
+            <th>ĐVT</th>
+            <th>Giá</th>
+            <th>Giá BH</th>
+            <th>Loại VP</th>
+            <th>Nhóm VP</th>
+            <th>Nhóm BH</th>
+            <th>QĐ 36</th>
+            <th>Tên 43</th>
+            <th>Ghi chú</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var gia_pttt in Model)
+        {
+            <tr>
+                <td>@gia_pttt.STT</td>
+                <td>@gia_pttt.Ma</td>
+                <td>@gia_pttt.Ten</td>
+                <td>@gia_pttt.DVT</td>
+                <td>@gia_pttt.Gia_TH</td>
+                <td>@gia_pttt.Gia_BH</td>
+                <td>@gia_pttt.LoaiVP</td>
+                <td>@gia_pttt.NhomVP</td>
+                <td>@gia_pttt.NhomVP_BHYT</td>
+                <td>@gia_pttt.QD366</td>
+                <td>@gia_pttt.Ten43</td>
+                <td>@gia_pttt.GhiChuKt</td>
+                <td style="white-space:nowrap">
+                    <a class="btn btn-primary btn-sm" asp-controller="Gia_PTTT" asp-action="Edit" asp-route-id="@gia_pttt.STT">Sửa</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="Gia_PTTT" asp-action="Delete" asp-route-id="@gia_pttt.STT">Xoá</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
