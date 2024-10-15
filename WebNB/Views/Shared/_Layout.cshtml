@@ -12,30 +12,47 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebNB</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img class="logo" src="~/images/logo_umc.jpg" asp-append-version="true" alt="Logo">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="menu navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link">
+                                Danh mục
+                                <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown">
+                                <li>
+                                    <a class="nav-link" asp-area="" asp-controller="Gia_CLS" asp-action="Index">Giá CLS</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" asp-area="" asp-controller="Gia_DV" asp-action="Index">Giá dịch vụ</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" asp-area="" asp-controller="Gia_GIUONG" asp-action="Index">Giá giường</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" asp-area="" asp-controller="Gia_PTTT" asp-action="Index">Giá PTTT</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Waiting 1</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Gia_CLS" asp-action="Index">Giá CLS</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Waiting 2</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Gia_DV" asp-action="Index">Giá DV</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Waiting 3</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Gia_GIUONG" asp-action="Index">Giá GIƯỜNG</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Gia_PTTT" asp-action="Index">Giá PTTT</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Waiting 4</a>
                         </li>
                     </ul>
                 </div>
@@ -50,7 +67,11 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - WebNB - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - WebNB -
+            <a asp-area=""
+               asp-controller="Home"
+               asp-action="Privacy">
+            </a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

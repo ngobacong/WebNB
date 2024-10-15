@@ -1,22 +1,146 @@
-html {
-  font-size: 14px;
+﻿html {
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin-bottom: 60px;
+    font-family: Arial, sans-serif;
 }
+
+.navbar-nav {
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    margin-left: 10px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    padding: 0px;
+}
+
+    .menu li {
+        position: relative;
+    }
+
+    .menu > li {
+        padding: 15px 20px;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        font-size: 18px;
+    }
+
+        .menu a:hover {
+            background-color: #258cfb;
+        }
+
+.dropdown {
+    list-style: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 0px;
+    display: none; /* Ẩn menu con */
+}
+
+    .dropdown li {
+        width: 150px;
+    }
+
+    .dropdown a {
+        padding: 10px 20px;
+    }
+
+.menu li:hover .dropdown {
+    display: block; /* Hiện menu con khi hover */
+}
+
+.dropdown a:hover {
+    background-color: #258cfb;
+}
+
+.table > thead {
+    background-color: #b8e5fa;
+    color: #2a24b8;
+    border: 0px solid #000000;
+}
+
+.tr {
+    color: #2a24b8;
+}
+
+.open-popup-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Container của popup */
+.popup-modal {
+    display: none; /* Ẩn popup theo mặc định */
+    position: fixed; /* Fixed vị trí ở toàn bộ màn hình */
+    z-index: 1; /* Đặt popup ở trên các phần tử khác */
+    left: 0;
+    top: 0;
+    width: 100%; /* Chiều rộng của popup chiếm toàn bộ màn hình */
+    height: 100%; /* Chiều cao của popup chiếm toàn bộ màn hình */
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+}
+
+/* Nội dung của popup */
+.popup-content {
+    background-color: white;
+    margin: 5% auto; /* Đặt popup ở giữa màn hình */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Chiều rộng của popup */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Nút để đóng popup */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    .close-btn:hover,
+    .close-btn:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }

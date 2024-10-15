@@ -1,17 +1,26 @@
 ﻿@using WebNB.Models.Entities
 @model List<Gia_CLS>
 
+@{
+}
+<link rel="stylesheet" href="~/css/Gia_CLS.css" asp-append-version="true" />
 
-<h2 class="text-center mb-5">Giá cận lâm sàng</h2>
+<h2 class="text-center mb-5">GIÁ CẬN LÂM SÀNG</h2>
+
+<div class="search">
+    <div></div>
+</div>
 
 <div class="row mb-5">
     <div>
         <a class="btn btn-primary" asp-controller="Gia_CLS" asp-action="Create">Tạo mới</a>
     </div>
+    <div class="col">
+    </div>
 </div>
 
-<table class="table">
-    <thead>
+<table class="table table-striped">
+    <thead class="thead-dark">
         <tr>
             <th>STT</th>
             <th>Mã</th>
@@ -25,6 +34,7 @@
             <th>QĐ 36</th>
             <th>Tên 43</th>
             <th>Ghi chú</th>
+            <th></th>
         </tr>
     </thead>
 
@@ -32,6 +42,36 @@
         @foreach (var gia_cls in Model)
         {
             <tr>
+                <td>@gia_cls.STT</td>
+                <td>@gia_cls.Ma</td>
+                <td>@gia_cls.Ten</td>
+                <td>@gia_cls.DVT</td>
+                <td>@gia_cls.Gia_TH</td>
+                <td>@gia_cls.Gia_BH</td>
+                <td>@gia_cls.LoaiVP</td>
+                <td>@gia_cls.NhomVP</td>
+                <td>@gia_cls.NhomVP_BHYT</td>
+                <td>@gia_cls.QD366</td>
+                <td>@gia_cls.Ten43</td>
+                <td>@gia_cls.GhiChuKt</td>
+                <td style="white-space:nowrap">
+                    <a class="btnpopup btn btn-success btn-sm" onclick="viewDetails()">Xem</a>
+                    <a class="btn btn-primary btn-sm" asp-controller="Gia_CLS" asp-action="Edit" asp-route-id="@gia_cls.STT">Sửa</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="Gia_CLS" asp-action="Delete" asp-route-id="@gia_cls.STT">Xoá</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Popup modal -->
+<div id="view-popup" class="popup-modal">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+
+        @foreach (var gia_cls in Model)
+        {
+            <h3 class="title-popup text-center">Chi tiết món @gia_cls.Ten</h3>
             <td>@gia_cls.STT</td>
             <td>@gia_cls.Ma</td>
             <td>@gia_cls.Ten</td>
@@ -44,11 +84,7 @@
             <td>@gia_cls.QD366</td>
             <td>@gia_cls.Ten43</td>
             <td>@gia_cls.GhiChuKt</td>
-            <td style="white-space:nowrap">
-                <a class="btn btn-primary btn-sm" asp-controller="Gia_CLS" asp-action="Edit" asp-route-id="@gia_cls.STT">Sửa</a>
-                <a class="btn btn-danger btn-sm" asp-controller="Gia_CLS" asp-action="Delete" asp-route-id="@gia_cls.STT">Xoá</a>
-            </td>
-            </tr>
         }
-    </tbody>
-</table>
+    </div>
+</div>
+

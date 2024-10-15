@@ -1,4 +1,20 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿        // Hàm để mở popup
+function viewDetails() {
+    document.getElementById("view-popup").style.display = "block";
+        }
 
-// Write your JavaScript code.
+    // Hàm để đóng popup
+    function closePopup() {
+        document.getElementById("view-popup").style.display = "none";
+        }
+
+    // Đóng popup khi bấm ra ngoài modal
+    window.onclick = function(event) {
+        var popup = document.getElementById("view-popup");
+    if (event.target == popup) {
+        popup.style.display = "none";
+            }
+        }
+
+
+
