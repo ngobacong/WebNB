@@ -38,7 +38,6 @@ namespace WebNB.Models.Entities
         [MaxLength(254)]
         public string Ten43 { get; set; } = "";
 
-        [MaxLength(254)]
         public string GhiChuKt { get; set; } = "";
 
     }
