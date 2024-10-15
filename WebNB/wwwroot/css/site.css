@@ -144,3 +144,46 @@ body {
         text-decoration: none;
         cursor: pointer;
     }
+
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.pagination {
+    margin-top: 10px;
+}
+
+    .pagination button {
+        padding: 8px 16px;
+        margin: 0 4px;
+        border: 1px solid #000;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+        .pagination button.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .pagination button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }

@@ -138,7 +138,7 @@ namespace WebNB.Controllers
             if (file == null || file.Length == 0)
             {
                 ViewBag.ErrorMessage = "Chọn file import đê";
-                return View();
+                return RedirectToAction("Index", "Gia_CLS");
             }
 
             // Kiểm tra định dạng file (chỉ cho phép .xls và .xlsx)
